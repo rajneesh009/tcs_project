@@ -1,0 +1,61 @@
+{% extends 'user/base.html' %}
+{% load staticfiles %}
+{% block title %}Account Activation{% endblock title %}
+{% block head %} 
+<link type="text/css" rel="stylesheet" href="{% static 'home.css' %}"  media="screen,projection"/> 
+{% endblock %}
+
+{% block content %}
+	<a style="position: fixed;top: 10px;right: 10px;z-index: 865468546854;" href="{% url 'logout' %}" class="waves-effect waves-light btn">Logout</a>
+
+          <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+
+    <div id="login-page" class="row">
+      <div id="mpage" class="col s3 z-depth-4 card-panel">
+
+          <div class="row" id="header">
+
+            <div class="input-field col s3 " id="dpBox">
+              <img src="{% static 'images/default.png'%}" alt="" class="circle responsive-img valign profile-image-login">
+            </div>
+
+            <div class="input-field col s9 " id="userBox">
+              <p id="user" >{{ user.username }}</p>
+            </div>
+
+          </div>
+
+
+          <div class="row margin" id="umchat">
+
+	<div class="input-field col s12" id="message">
+              <p id="chatlog11" class="chatlog">&nbsp;</p>
+              <p id="chatlog10" class="chatlog">&nbsp;</p>
+              <p id="chatlog9" class="chatlog">&nbsp;</p>
+              <p id="chatlog8" class="chatlog">&nbsp;</p>
+              <p id="chatlog7" class="chatlog">&nbsp;</p>
+              <p id="chatlog6" class="chatlog">&nbsp;</p>
+              <p id="chatlog5" class="chatlog">&nbsp;</p>
+              <p id="chatlog4" class="chatlog">&nbsp;</p>
+              <p id="chatlog3" class="chatlog">&nbsp;</p>
+              <p id="chatlog2" class="chatlog">&nbsp;</p>
+              <p id="chatlog1" class="chatlog">&nbsp;</p>
+						</div>
+
+						<div class="input-field col s12" id="mchat">
+							<input type="text" name="chat" id="chatbox" placeholder="Hi there! Type here to talk to me." onfocus="placeHolder()">
+            </div>
+
+          </div>
+      </div>
+    </div>
+ 
+{% endblock content %}
+
+{% block scripts %}
+ <script src="{% static 'student/home.js'%}" type="text/javascript" charset="utf-8"></script> 
+{% endblock scripts %}

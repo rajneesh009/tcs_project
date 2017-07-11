@@ -1,0 +1,60 @@
+{% extends 'user/base.html' %}
+{% load staticfiles %}
+{% load material_form %}
+{% block title %}Chatbot Login{% endblock %}
+
+{% block head %}
+  <link type="text/css" rel="stylesheet" href="{% static 'user/signup.css' %}" />
+{% endblock %}
+
+
+{% block header %}
+
+{% endblock %}
+
+
+
+{% block content %}
+<div id="loader-wrapper">
+      <div id="loader"></div>        
+      <div class="loader-section section-left"></div>
+      <div class="loader-section section-right"></div>
+  </div>
+  <!-- End Page Loading -->
+
+  <div id="login-page" class="row">
+    <div class="col s3 z-depth-4 card-panel" style="margin-left:35%">
+     <form method="POST" action="{% url 'student_signup' %}" class="col s12">
+     <div class="row">
+          <div class="input-field col s12 center">
+            <h4 style="margin-top: 5px;">Register</h4>
+            <p class="center">CHATBOT REGISTRATION !</p>
+          </div>
+        </div>
+                {% csrf_token %}
+                {% form form=signup_form %}
+                {% part form.username prefix %}<i class="material-icons prefix">account_box</i>{% endpart %}
+                {% part form.email prefix %}<i class="material-icons prefix">email</i>{% endpart %}
+                {% part form.password1 prefix %}<i class="material-icons prefix">lock</i>{% endpart %}
+                {% part form.password2 prefix %}<i class="material-icons prefix">lock</i>{% endpart %}
+                {% endform %}
+              <br>
+              <div id="recruiter-signup-recaptcha-div"></div>
+                <div class="row">
+                  <button type="submit" id="signup-btn" class="btn waves-effect waves-light col s8 offset-s2">Signup</button>
+                </div>
+                <div class="input-field col s12">
+            <p class="margin center medium-small sign-up">Already have an account? <a href="{% url 'landing' %}">Login</a></p>
+          </div>
+                <br>
+      </form>
+    </div>
+  </div>
+{% endblock %}
+
+
+
+{% block scripts %}
+
+{% endblock %}
+
