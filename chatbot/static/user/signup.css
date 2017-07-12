@@ -1,10 +1,32 @@
-#heading
+.navbar-fixed {
+    height: 64px !important;
+}
+
+.input-field {
+    position: relative;
+    margin-top: .5rem;
+}
+
+#first-heading {
+    font-size: 2.28rem;
+    line-height: 110%;
+    margin: .5rem 0 0.912rem 0;
+    margin-bottom: 2px;
+    color: #2f7c32;
+}
+
+#second-heading
 {
 	margin-top: 2px;
-	margin-bottom: 7px;
+	margin-bottom: 10px;
 	color: #2f7c32;
-	font-size: 18px;
-	font-family: arial;
+}
+
+form .help-block {
+    line-height: 12px;
+    position: relative;
+    top: -10px;
+    color: rgba(0, 0, 0, 0.7);
 }
 
 .input-field label {

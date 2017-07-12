@@ -1,8 +1,8 @@
 body {
-  background: #384047;
   padding-top: 15px;
   padding-bottom: 15px;
   color: white;
+  background: #ffffff url("bgimage.png") no-repeat center top !important;
 }
 
 #mpage {

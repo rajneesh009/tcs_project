@@ -6,7 +6,7 @@
 			{% block title %}{% endblock title %}
 		</title>
 		<link type="text/css" rel="stylesheet" href="{% static 'common/css/font-awesome.min.css' %}" />
-		<link type="text/css" rel="stylesheet" href="{% static 'materialize-blue.css' %}" >
+		<link type="text/css" rel="stylesheet" href="{% static 'base.css' %}" >
 		<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
@@ -25,9 +25,30 @@
 		{% include 'material/includes/material_css.html' %}
 		{% block head %}{% endblock head %}
 	</head>
-	<body class="cyan">
-		<header class="navbar-fixed">
+	<body>
+		<header>
 			{% block header %}{% endblock header %}
+			<div class="navbar-fixed">
+    <nav>
+
+      <div class="nav-wrapper hide-on-med-and-down">
+        <a href="{% url 'landing' %}" class="brand-logo" id="brand-corner">
+                    <div class="left" style="margin-left: 1%;">
+                      <div id="logo">
+                        <img src="{% static 'images/2.jpg' %}" class="circle" style="height: 55px">
+                        <div id="inner-logo" style="margin-left: 10px">
+                        <h4>AUTOMATED CHATBOT</h4>
+                        <h6>TCS remote internship 2.0</h6> 
+                        </div>
+                      </div>
+                    </div>
+        </a>
+      <ul id="nav-mobile" class="right">
+        <li><a href="">Meet the team</a></li>
+      </ul>
+      </div>
+  </nav>
+  </div>
 		</header>
 		<main>
 			{% block content %}{% endblock content %}

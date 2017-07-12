@@ -1,8 +1,8 @@
 body {
   background: #384047;
-  padding-top: 15px;
   padding-bottom: 15px;
   color: white;
+  padding-top: 0px !important; 
 }
 
 #mpage {

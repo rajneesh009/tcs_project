@@ -22,13 +22,13 @@
   </div>
   <!-- End Page Loading -->
 
-  <div id="login-page" class="row">
-    <div class="col s3 z-depth-4 card-panel" style="margin-left:35%">
+  <div id="login-page" class="row" style="margin-bottom: 2px;">
+    <div class="col s3 z-depth-4 card-panel" style="margin-left:35%;background-color: #f5f5dc;">
      <form method="POST" action="{% url 'student_signup' %}" class="col s12">
      <div class="row">
           <div class="input-field col s12 center">
-            <h4 style="margin-top: 5px;">Register</h4>
-            <p class="center">CHATBOT REGISTRATION !</p>
+            <h4 id="first-heading" style="margin-top: 5px;">Register</h4>
+            <p class="center" id="second-heading">CHATBOT REGISTRATION !</p>
           </div>
         </div>
                 {% csrf_token %}
@@ -46,7 +46,6 @@
                 <div class="input-field col s12">
             <p class="margin center medium-small sign-up">Already have an account? <a href="{% url 'landing' %}">Login</a></p>
           </div>
-                <br>
       </form>
     </div>
   </div>

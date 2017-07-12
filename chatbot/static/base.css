@@ -1,0 +1,54 @@
+body {
+    background: #ffffff url("bgimage.png") no-repeat center top;
+}
+
+.navbar-fixed
+{
+	margin-bottom: 20px;
+}
+
+nav{
+    
+    height: 64px;
+    padding-top: 2px;
+    background-color: #3c8c40 !important;
+    padding-left: 20px;
+
+}
+
+nav .brand-logo { 
+    font-family: "Times New Roman"; /* New */
+    text-transform: capitalize; /* New */
+  font-size: 1.6rem;
+}
+
+#logo
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+#inner-logo h4
+{
+  font-size:21px;
+  margin-bottom: 1px;
+  font-family: "Times New Roman";
+  text-transform: capitalize;
+}
+
+#inner-logo h6
+{
+  
+  font-size: 14px;
+  margin-top: 1px;
+  font-family: "Times New Roman";
+  text-transform: capitalize;
+}
+
+
+#brand-corner:hover
+{
+  cursor: pointer;
+}
