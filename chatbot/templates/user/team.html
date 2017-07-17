@@ -1,11 +1,81 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
+{% extends 'user/base.html' %}
+{% load staticfiles %}
+{% load material_form %}
+{% block title %}Chatbot Login{% endblock %}
 
-Team
+{% block head %}
+  <link type="text/css" rel="stylesheet" href="{% static 'user/team.css' %}" />
+{% endblock %}
 
-</body>
-</html>
+
+{% block header %}
+{% endblock %}
+
+
+
+{% block content %}
+<div class="container white" style="padding: 5px;">
+    <!--  Outer row  -->
+        <div class="row">
+            <div class="col s12 m12 ">
+                <!--  About the Team-->
+                <div id="team" class="section col s12 m10 offset-m1">
+                    <div class="row">
+                        <h2 class="header" style="color: #ee6e73; font-weight: 300;">Meet the Team</h2>
+                        <p class="caption flow-text" style="font-size: 1.25rem;font-weight: 300;margin-bottom: 1px">We are a team of students from University School of Information and Communication Technology (USICT).</p>
+                    </div>
+                <br>
+
+                    <div class="row section" id="pratulya">
+                        <div class="col s4 m2 center-on-small-only">
+                            <div class="image-container">
+                                <img class="circle responsive-img" src="{% static 'images/team/rajneesh.jpg' %}">
+                            </div>
+                        </div>
+                        <div class="col s7 offset-s1 m8">
+                            <h4 style="color: #4caf50;margin-bottom: 2px;margin-top: 2px;">Rajneesh Sharma</h4>
+                            <p style="margin-top: 2px;">Rajneesh has worked on backend of the website using Django framwork, web scraping using python and on frontend using materialize CSS.
+                          </p>
+                        </div>
+                    </div>
+
+                    <div class="row section" id="rajneesh">
+                        <div class="col s4 m2 center-on-small-only">
+                            <div class="image-container">
+                                <img class="circle responsive-img" src="{% static 'images/team/manmohan.jpg' %}">
+                            </div>
+                        </div>
+                        <div class="col s7 offset-s1 m8">
+                            <h4 style="color: #4caf50;margin-bottom: 2px;margin-top: 2px;">Manmohan Singh</h4>
+                            <p style="margin-top: 2px;">Manmohan has worked on frontend and user interface using Html, CSS, javascript and materialize CSS.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row section" id="shivam">
+                        <div class="col s4 m2 center-on-small-only">
+                            <div class="image-container">
+                                <img class="circle responsive-img" src="{% static 'images/team/ravi.jpeg' %}">
+                            </div>
+                        </div>
+                        <div class="col s7 offset-s1 m8">
+                            <h4 style="color: #4caf50;margin-bottom: 2px;margin-top: 2px;">Ravi Ranjan</h4>
+                            <p style="margin-top: 2px;">Ravi has worked on frontend using Html, CSS, javascript and also worked on integration of the website.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+{% endblock %}
+
+
+
+{% block scripts %}
+
+<script type="text/javascript">
+  
+</script>
+
+{% endblock %}
+

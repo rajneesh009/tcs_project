@@ -1,9 +1,100 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
-Student Home
-</body>
-</html>
+{% extends 'user/base.html' %}
+{% load staticfiles %}
+{% block title %}User Home{% endblock title %}
+{% block head %} 
+<link type="text/css" rel="stylesheet" href="{% static 'home.css' %}"  media="screen,projection"/> 
+<style type="text/css">
+  body {
+    background: #ffffff url("{% static 'bgimage.png' %}") no-repeat center top;
+    padding-top: 0px;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+	<a id="corner-button" href="{% url 'logout' %}" class="waves-effect waves-light btn">Logout</a>
+
+          <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+
+    <div id="login-page" class="row">
+      
+      <div id="mpage" class="col s10 m3 z-depth-4 card-panel offset-s1" style="background-image: url('{% static 'images/3.jpg'%}');">
+
+          <div class="row" id="header">
+
+            <div class="input-field col s3 " id="dpBox">
+              <img id="img-user" src="{% static 'images/default.png'%}" alt="" class="circle responsive-img valign profile-image-login">
+            </div>
+
+            <div class="input-field col s9 " id="userBox">
+              <p id="user" >{{ user.username }}</p>
+            </div>
+
+          </div>
+
+
+          <div class="row margin" id="umchat">
+
+	<div class="input-field col s12" id="message">
+			  <p id="chatlog40" class="chatlog">&nbsp;</p>
+              <p id="chatlog39" class="chatlog">&nbsp;</p>
+              <p id="chatlog38" class="chatlog">&nbsp;</p>
+              <p id="chatlog37" class="chatlog">&nbsp;</p>
+              <p id="chatlog36" class="chatlog">&nbsp;</p>
+              <p id="chatlog35" class="chatlog">&nbsp;</p>
+              <p id="chatlog34" class="chatlog">&nbsp;</p>
+              <p id="chatlog33" class="chatlog">&nbsp;</p>
+              <p id="chatlog32" class="chatlog">&nbsp;</p>
+              <p id="chatlog31" class="chatlog">&nbsp;</p>
+              <p id="chatlog30" class="chatlog">&nbsp;</p>
+              <p id="chatlog29" class="chatlog">&nbsp;</p>
+              <p id="chatlog28" class="chatlog">&nbsp;</p>
+              <p id="chatlog27" class="chatlog">&nbsp;</p>
+              <p id="chatlog26" class="chatlog">&nbsp;</p>
+              <p id="chatlog25" class="chatlog">&nbsp;</p>
+              <p id="chatlog24" class="chatlog">&nbsp;</p>
+              <p id="chatlog23" class="chatlog">&nbsp;</p>
+              <p id="chatlog22" class="chatlog">&nbsp;</p>
+              <p id="chatlog21" class="chatlog">&nbsp;</p>
+              <p id="chatlog20" class="chatlog">&nbsp;</p>
+              <p id="chatlog19" class="chatlog">&nbsp;</p>
+              <p id="chatlog18" class="chatlog">&nbsp;</p>
+              <p id="chatlog17" class="chatlog">&nbsp;</p>
+              <p id="chatlog16" class="chatlog">&nbsp;</p>
+              <p id="chatlog15" class="chatlog">&nbsp;</p>
+              <p id="chatlog14" class="chatlog">&nbsp;</p>
+              <p id="chatlog13" class="chatlog">&nbsp;</p>
+              <p id="chatlog12" class="chatlog">&nbsp;</p>
+              <p id="chatlog11" class="chatlog">&nbsp;</p>
+              <p id="chatlog10" class="chatlog">&nbsp;</p>
+              <p id="chatlog9" class="chatlog">&nbsp;</p>
+              <p id="chatlog8" class="chatlog">&nbsp;</p>
+              <p id="chatlog7" class="chatlog">&nbsp;</p>
+              <p id="chatlog6" class="chatlog">&nbsp;</p>
+              <p id="chatlog5" class="chatlog">&nbsp;</p>
+              <p id="chatlog4" class="chatlog">&nbsp;</p>
+              <p id="chatlog3" class="chatlog">&nbsp;</p>
+              <p id="chatlog2" class="chatlog">&nbsp;</p>
+              <p id="chatlog1" class="chatlog">&nbsp;</p>
+						</div>
+
+						<div class="input-field col s12" id="mchat" style="position: relative;">
+							<input type="text" name="chat" id="chatbox" placeholder="Hi there! Type here to talk to me." onfocus="placeHolder()">
+               <a id="send" href="#" class="hide-on-large-only" style="position: absolute;bottom: 2px;right: 25px;color: black;z-index: 54548498;"><i class="material-icons">send</i></a>
+
+            </div>
+
+
+          </div>
+      </div>
+    </div>
+ 
+{% endblock content %}
+
+{% block scripts %}
+ <script src="{% static 'student/home.js'%}" type="text/javascript" charset="utf-8"></script>
+{% endblock scripts %}

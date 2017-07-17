@@ -28,7 +28,16 @@
 	<body>
 		<header>
 			{% block header %}{% endblock header %}
-			<div class="navbar-fixed">
+			<style type="text/css">
+				@media (min-width:300px) and (orientation: portrait){
+
+						nav
+						{
+							padding-left: 5px;
+						}
+				}
+			</style>
+	<div class="navbar-fixed">
     <nav>
 
       <div class="nav-wrapper hide-on-med-and-down">
@@ -44,9 +53,28 @@
                     </div>
         </a>
       <ul id="nav-mobile" class="right">
-        <li><a href="">Meet the team</a></li>
+        <li><a href="{% url 'team' %}">Meet the team</a></li>
       </ul>
       </div>
+
+      <div class="nav-wrapper hide-on-large-only">
+        <a href="{% url 'landing' %}" class="brand-logo" id="brand-corner">
+                    <div class="left">
+                      <div id="logo">
+                        <img src="{% static 'images/2.jpg' %}" class="circle" style="height: 40px">
+                        <div id="inner-logo" style="margin-left: 5px">
+                        <h4>AUTOMATED CHATBOT</h4>
+                        <h6>TCS remote internship 2.0</h6> 
+                        </div>
+                      </div>
+                    </div>
+        </a>
+      <ul id="nav-mobile" style="position: absolute; top:1.5px;right: 5px;">
+        <li><a href="{% url 'team' %}" style="color: coral;line-height: 20px;height: 20px;">Meet the team</a></li>
+      </ul>
+      </div>
+
+
   </nav>
   </div>
 		</header>

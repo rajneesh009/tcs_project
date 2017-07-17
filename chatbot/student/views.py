@@ -27,7 +27,7 @@ def student_login(request):
 		user = f.get_user()
 		auth_login(request, user)
 		context = {'user' : user }
-		return render(request, 'student/home.html', context)
+		return redirect('home')
 	else:
 		return JsonResponse(status=400, data={'errors': dict(f.errors.items())})
 

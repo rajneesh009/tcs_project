@@ -13,6 +13,9 @@ from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_http_methods, require_GET, require_POST
 from user.forms import AccountForm, LoginForm, SignupForm
 from user.models import CustomUser
+from . import scrape
+import os, re, datetime
+from bs4 import BeautifulSoup
 
 
 # Create your views here
@@ -94,7 +97,63 @@ def reset_password(request, user_hashid='', token=''):
 @login_required
 @require_GET
 def home(request):
-	return handle_user_type(request, redirect_request=True)
+	context = {}
+	user = request.user
+	context = {'user' : user }
+	return render(request, 'user/home.html', context)
+
+@login_required
+@require_GET
+def scrapingcricket(request):
+	try:
+		result = {}
+		result = scrape.cricket_score()
+		return JsonResponse({'result': result})
+	except:
+		return JsonResponse(status=400)
+
+
+@login_required
+@require_GET
+def scrapingfootball(request):
+	try:
+		result = {}
+		result = scrape.football_score()
+		return JsonResponse({'result': result})
+	except:
+		return JsonResponse(status=400, data={})
+
+@login_required
+@require_GET
+def scrapingweather(request):
+	try:
+		result = {}
+		result = scrape.weather()
+		return JsonResponse({'result': result})
+	except:
+		return JsonResponse(status=400, data={})
+
+@login_required
+@require_GET
+def scrapingstock(request):
+	try:
+		result = {}
+		result = scrape.stock()
+		return JsonResponse({'result': result})
+	except:
+		return JsonResponse(status=400, data={})
+
+@login_required
+@require_GET
+def scrapingpetrol(request):
+	try:
+		result = {}
+		result = scrape.petrol()
+		return JsonResponse({'result': result})
+	except:
+		return JsonResponse(status=400, data={})							
+
+
 
 @login_required
 @require_GET

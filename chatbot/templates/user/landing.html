@@ -9,7 +9,14 @@
 
 
 {% block header %}
-
+<style type="text/css">
+  @media (min-width:992px){
+    #card-login
+    {
+      margin-left: 36%;
+    }
+  }
+</style>
 {% endblock %}
 
 
@@ -24,7 +31,7 @@
 
 
   <div id="login-page" class="row">
-    <div class="col s3 z-depth-4 card-panel" style="margin-left:35%;padding-bottom: 20px;background-color: #f5f5dc;">
+    <div id="card-login" class="col s10 m3 z-depth-4 card-panel offset-s1" style="padding-bottom: 20px;background-color: #f5f5dc;">
       <form method="POST" action="{% url 'student_login' %}">
         
         <div class="row">
