@@ -183,6 +183,46 @@ function chatbotResponse() {
     botMessage = 'Chat cleared.';
     clear();
   }
+
+  if (lastUserMessage === 'Hi') {
+    botMessage = "Hey there! Here to help you. Type -<br>1. <b>cricket</b>: to get live cricket score<br>2. <b>football</b>: to get live football<br>3. <b>weather</b>: to get live weather condition in delhi<br>4. <b>stock</b> - to get live stock market status<br>5. <b>fuels</b> - to get fuel rates for today<br>6. <b>clear</b> - to clear the chat log";
+  }
+  if (lastUserMessage === 'Cricket') {
+    botMessage = '<b> Live cricket score :</b>';
+    cricket_score();
+  }
+
+  if (lastUserMessage === 'Football') {
+    botMessage = '<b> Live football score :</b>';
+    football_score();
+  }
+
+  if (lastUserMessage === 'Weather') {
+    botMessage = '<b> Current weather in Delhi :</b>';
+    weather();
+  }
+
+  if (lastUserMessage === 'Stock') {
+    botMessage = '<b> Live stock market status :</b>';
+    stock();
+  }
+
+  if (lastUserMessage === 'Fuels') {
+    botMessage = '<b> Fuels prices in delhi today :</b>';
+    petrol();
+  }
+
+  if (lastUserMessage === 'How are you?') {
+    botMessage = 'I am all awesome what about you?';
+  }
+  if (lastUserMessage === 'Is mugs fat?') {
+    botMessage = 'Banana shake for life';
+  }
+
+  if (lastUserMessage === 'Clear') {
+    botMessage = 'Chat cleared.';
+    clear();
+  }
 }
 
 
