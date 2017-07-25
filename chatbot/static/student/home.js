@@ -4,6 +4,29 @@ $(document).ready(function() {
 
 nlp = window.nlp_compromise;
 
+var preloader = document.getElementById('page-preloader');
+  var preloader_shadow = document.getElementById('preloader-shadow');
+
+  function showPreloader(){
+    var h = window.innerHeight;
+    var w = window.innerWidth;
+    addPreloaderShadow(h , w);
+    preloader.style.top = h/3 + 'px';
+    preloader.style.left = w/2.4 + 'px';
+    preloader.style.display = 'block';
+  }
+
+  function addPreloaderShadow(h , w){
+    preloader_shadow.style.height = h + 'px';
+      preloader_shadow.style.width = w + 'px';
+      preloader_shadow.style.display = 'block';
+  }
+
+  function removePreloader(){
+    preloader.style.display = 'none';
+    preloader_shadow.style.display = 'none';
+  }
+
 var messages = [],
   lastUserMessage = "",
   botMessage = "",
@@ -80,6 +103,12 @@ function cricket_score(){
     $.ajax({
         url: '/scrapingcricket/',
         type: 'GET',
+        beforeSend: function() {
+          showPreloader();
+            },
+            complete: function() {
+              removePreloader();
+            },
         success : function(data) {
             printer_cricket(JSON.stringify(data.result['match3']),JSON.stringify(data.result['match1']),JSON.stringify(data.result['match2']));
         }
@@ -90,6 +119,12 @@ function football_score(){
     $.ajax({
         url: '/scrapingfootball/',
         type: 'GET',
+        beforeSend: function() {
+          showPreloader();
+            },
+            complete: function() {
+              removePreloader();
+            },
         success : function(data) {
             printer_football(JSON.stringify(data.result['0']),JSON.stringify(data.result['1']),JSON.stringify(data.result['2']),JSON.stringify(data.result['3']),JSON.stringify(data.result['4']),JSON.stringify(data.result['5']),JSON.stringify(data.result['6']),JSON.stringify(data.result['7']));
         }
@@ -100,6 +135,12 @@ function weather(){
     $.ajax({
         url: '/scrapingweather/',
         type: 'GET',
+        beforeSend: function() {
+          showPreloader();
+            },
+            complete: function() {
+              removePreloader();
+            },
         success : function(data) {
             printer_weather(JSON.stringify(data.result['temp']),JSON.stringify(data.result['unit']),JSON.stringify(data.result['Condition']),JSON.stringify(data.result['Humidity']));
         }
@@ -110,6 +151,12 @@ function stock(){
     $.ajax({
         url: '/scrapingstock/',
         type: 'GET',
+        beforeSend: function() {
+          showPreloader();
+            },
+            complete: function() {
+              removePreloader();
+            },
         success : function(data) {
             printer_stock(JSON.stringify(data.result['nifty']),JSON.stringify(data.result['sensex']),JSON.stringify(data.result['gold']),JSON.stringify(data.result['silver']));
         }
@@ -120,6 +167,12 @@ function petrol(){
     $.ajax({
         url: '/scrapingpetrol/',
         type: 'GET',
+        beforeSend: function() {
+          showPreloader();
+            },
+            complete: function() {
+              removePreloader();
+            },
         success : function(data) {
             printer_petrol(JSON.stringify(data.result['petrol']),JSON.stringify(data.result['diesel']),JSON.stringify(data.result['cng']),JSON.stringify(data.result['silver']));
         }
