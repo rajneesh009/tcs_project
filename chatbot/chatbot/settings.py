@@ -79,15 +79,12 @@ WSGI_APPLICATION = 'chatbot.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
+SECRET_KEY = config('SECRET_KEY')
+DEBUG = config('DEBUG', default=False, cast=bool)
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'chatbot',
-        'HOST': 'localhost',
-        'USER': 'root',
-        'PASSWORD': '',
-        'PORT': 3306
-    }
+    'default': dj_database_url.config(
+        default=config('DATABASE_URL')
+    )
 }
 
 # Password validation
